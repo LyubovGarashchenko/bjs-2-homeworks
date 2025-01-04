@@ -2,39 +2,37 @@
 "use strict"
 
 
-function getArrayParams (...arr) {
-    let min = Infinity;
-    let max = -Infinity;
-    let sum = 0;
+function getArrayParams(...arr) {
+	let min = Infinity;
+	let max = -Infinity;
+	let sum = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-    }
-    
-    if (arr[i] < min) {
-            min = arr[i];
-    }
-    
-    sum += arr[i];
-    }
-    
-    const avg = Number((sum / arr.length).toFixed(2));
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] > max) {
+			max = arr[i];
+		}
 
-    return {
-    min: min,
-    max: max,
-    avg: avg
-    };
+		if (arr[i] < min) {
+			min = arr[i];
+		}
+
+		sum += arr[i];
+	}
+
+	const avg = Number((sum / arr.length).toFixed(2));
+
+	return {
+		min: min,
+		max: max,
+		avg: avg
+	};
 }
- 
- //Tests
+
+//Tests
 console.log(getArrayParams(-99, 99, 10)) // { min: -99, max: 99, avg: 3.33 }
 console.log(getArrayParams(1, 2, 3, -100, 10)) //{ min: -100, max: 10, avg: -16.80 }
-console.log(getArrayParams(5)) //{ min: 5, max: 5, avg: 5
+console.log(getArrayParams(5)) //{ min: 5, max: 5, avg: 5}
 
-  return maxWorkerResult;
-}
 
 // Задача 2
 
@@ -71,9 +69,9 @@ function differenceEvenOddWorker(...arr) {
 	for (let i = 0; i < arr.length; i++) {
 
 		if (arr[i] % 2 == 0) {
-			sumOddElement += arr[i];
-		} else {
 			sumEvenElement += arr[i];
+		} else {
+			sumOddElement += arr[i];
 		}
 	}
 
@@ -119,12 +117,12 @@ console.log(averageEvenElementsWorker(15, 97, 85, 64, 67, 10, 69, 40, 15, 35)); 
 
 // Задача 3
 
-function makeWork(arrOffArr, funs) {
+function makeWork(arrOffArr, func) {
 	let maxWorkerResult = -Infinity;
 
 	for (let i = 0; i < arrOffArr.length; i++) {
 
-		const makeWorkerResult = func(...arrOfArr[i]);
+		const makeWorkerResult = func(...arrOffArr[i]);
 		if (makeWorkerResult > maxWorkerResult) {
 			maxWorkerResult = makeWorkerResult;
 		}
