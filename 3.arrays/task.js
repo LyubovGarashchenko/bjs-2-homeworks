@@ -13,24 +13,13 @@ compareArrays([9, 2, 4, 8, 2], [9, 2, 4]) // false, разные значени�
 compareArrays([1, 2, 3], [2, 3, 1]) // false, разные индексы, хотя и одинаковые значения
 compareArrays([8, 1, 2], [8, 1, 2]) // true
 
-//Задача 2 Фильтрация и преобразование массива
-
-function getUsersNamesInAgeRange(users, gender) {
-    const usersFilter = users.filter(user => user.gender === gender);
-    if(usersFilter.length === 0){
-        return 0;
-    }
-    return usersFilter.reduce((acc, user) => acc + user.age / usersFilter.length, 0);
-}
-------------------------------------------------------
- // Задача 2
+ // Задача 2 Фильтрация и преобразование массива
 
  function getUsersNamesInAgeRange(users, gender) {
  	return users.filter(user => user.gender === gender).map(user => user.age).reduce((acc, age, index, arr) => acc + age / arr.length, 0);
  }
 
-
-	// Примеры вызова:
+	// Tests:
 	const people = [
       {firstName: "Александр", secondName: "Карпов", age: 17, gender: "мужской"},
       {firstName: "Егор", secondName: "Морозов", age: 21, gender: "мужской"},
@@ -51,7 +40,3 @@ function getUsersNamesInAgeRange(users, gender) {
     console.log(getUsersNamesInAgeRange(people, "женский")); // 27.4
     console.log(getUsersNamesInAgeRange([], "женский")); // 0
     console.log(getUsersNamesInAgeRange(people, "инопланетянин")); // 0
-
-
-
-	
