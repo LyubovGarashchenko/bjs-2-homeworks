@@ -16,7 +16,9 @@ compareArrays([8, 1, 2], [8, 1, 2]) // true
  // Задача 2 Фильтрация и преобразование массива
 
  function getUsersNamesInAgeRange(users, gender) {
- 	return users.filter(user => user.gender === gender).map(user => user.age).reduce((acc, age, index, arr) => acc + age / arr.length, 0);
+ 	return users.filter(user => user.gender === gender)
+	.map(user => user.age)
+	.reduce((acc, age, index, arr) => acc + age / arr.length, 0);
  }
 
 	// Tests:
