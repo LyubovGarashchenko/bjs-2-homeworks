@@ -81,9 +81,8 @@ class Library {
     }
 
     giveBookByName(bookName) {
-        const requestedBook = this.findBookBy("name", bookName);
+        const requestedBook = this.books.indexOf(this.findBookBy("name", bookName));
         this.books.splice(this.books.indexOf(requestedBook), 1);
         return requestedBook || null;
     }
  }
-
