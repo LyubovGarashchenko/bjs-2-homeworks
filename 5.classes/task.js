@@ -4,7 +4,7 @@ class PrintEditionItem {
 		this.name = name;
 		this.releaseDate = releaseDate;
 		this.pagesCount = pagesCount;
-		this._state = 100;
+		this.state = 100;
 		this.type = null;
 	}
 	fix() {
@@ -75,7 +75,7 @@ class Library {
 		return findedBook;
 	}
 	giveBookByName(bookName) {
-		const requestedBook = this.books.findBookBy(book => book.name === bookName);
+		const requestedBook = this.books.indexOf(this.findBookBy('name', bookName));
 		if (requestedBook != -1) {
 			return this.books.splice(requestedBook, 1)[0];
 		}
